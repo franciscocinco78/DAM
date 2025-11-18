@@ -1,8 +1,5 @@
 # DAM - Project 2024/2025
 
-<p align="center">
-    <img src="dam.jpg" alt="DAM Project">
-</p>
 
 > <span style="color:red">**Warning**: This repository contains sensitive files within its commit history which must never be shared publicly. A copy without such files in its history could be used for such purpose instead.</span>
 
@@ -125,4 +122,5 @@ Extras:
     
 **rules**: contains the configuration for actions:
 - the (dis)association of rules is dynamic and only editable through the second page
+
 
