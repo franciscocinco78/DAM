@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Perfect Greenhouse - sections</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/a6b386ca88.js"
+            crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="stylesheet.css">
+        <script>
+            // function allowDrop(ev) {
+            //     ev.preventDefault();
+            // }
+
+            function drag(ev) {
+                ev.dataTransfer.setData("text", ev.target.id);
+            }
+
+            // function drop(ev) {
+            //     ev.preventDefault();
+            //     var data = ev.dataTransfer.getData("text");
+            //     var draggedElement = document.getElementById(data);
+            //     if (!ev.target.contains(draggedElement)) {
+            //         ev.target.appendChild(draggedElement);
+            //     }
+            // }
+        </script>
+    </head>
+
+    <body>
+        <input type="hidden" id="pageID" value="3">
+        <!-- Navbar -->
+        <nav
+            class="navbar navbar-expand-lg navbar-light bg-light rounded shadow">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Sections editor</a>
+                <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#"
+                                id="pagesDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Pages
+                            </a>
+                            <ul class="dropdown-menu"
+                                aria-labelledby="pagesDropdown">
+                                <li><a class="dropdown-item"
+                                        href="index.html">Home</a></li>
+                                <li><a class="dropdown-item"
+                                        href="page2.html">Manage rules</a></li>
+                                <li><a class="dropdown-item"
+                                        href="page3.html">Edit sections</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-center">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox"
+                                id="darkModeSwitch">
+                            <label class="form-check-label"
+                                for="darkModeSwitch">Dark Mode</label>
+                            <!-- Circular Info Button -->
+                            <!-- <button
+                                class="btn btn-info btn-sm rounded-circle ms-2"
+                                id="info-btn" title="Info">
+                                <i class="fas fa-info"></i>
+                            </button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div> <!-- <h1>Sections editor</h1> -->
+            <div class="container mt-4"></div>
+            <button class="btn btn-secondary" id="toggle-info">
+                <i class="fas fa-info-circle"></i> Toggle Info
+            </button>
+            <div id="info-content" style="display: none;">
+                <p><i class="fas fa-info-circle"></i> Associate the sensors to
+                    sections by dragging the sensor name and releasing them in
+                    the
+                    desired section.</p>
+                <p><i class="fas fa-info-circle"></i> Click the <button
+                        class="btn btn-primary btn-sm"><i
+                            class="fas fa-plus"></i>
+                        Add</button> button to create new sections, or the
+                    <button
+                        class="btn btn-danger btn-sm"><i
+                            class="fas fa-times"></i></button> button in each
+                    section's name to delete existing sections.</p>
+                <p><i class="fas fa-exclamation-circle"></i> New sensors and
+                    unassociated sensors will always be added to the
+                    <strong>default</strong>
+                    section.</p>
+            </div>
+        </div>
+        <div class="container mt-4">
+            <button class="btn btn-primary" id="page3-add-section">
+                <i class="fas fa-plus"></i> Add
+            </button>
+        </div>
+        <div class="container mt-4">
+            <div class="row" id="categories-row">
+                <!-- <div class="col-md-4">
+                    <div class="card border-dark mb-3">
+                        <div>
+                            <h4 class="text-center">
+                                <div class="card-header">Sensores não
+                                    associados:</div>
+                            </h4>
+                        </div>
+                        <div class="card" ondrop="drop(event)"
+                            ondragover="allowDrop(event)">
+                            <div class="card-body" id="uncategorized-sensor-list">
+                                <p class="card-text"> </p>
+                                <li class="list-group-item" draggable="true"
+                                    ondragstart="drag(event)"
+                                    id="element1">Element
+                                    1</li>
+                                <li class="list-group-item" draggable="true"
+                                    ondragstart="drag(event)"
+                                    id="element2">Element
+                                    2</li>
+                                <li class="list-group-item" draggable="true"
+                                    ondragstart="drag(event)"
+                                    id="element3">Element
+                                    3</li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-dark mb-3">
+                        <div>
+                            <h4 class="text-center">
+                                <div
+                                    class="card-header d-flex justify-content-between align-items-center">Zone
+                                    1
+                                    <div>
+                                        <button class="btn btn-danger">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </h4>
+                        </div>
+                        <div class="card" ondrop="drop(event)"
+                            ondragover="allowDrop(event)">
+                            <div class="card-body" id="Zone 1">
+                                <p class="card-text"> </p>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <div class="col-md-4">
+                    <div class="card border-dark mb-3">
+                        <div>
+                            <h4 class="text-center">
+                                <div
+                                    class="card-header d-flex justify-content-between align-items-center">Zone
+                                    2
+                                    <div>
+                                        <button class="btn btn-danger">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </h4>
+                        </div>
+                        <div class="card" ondrop="drop(event)"
+                            ondragover="allowDrop(event)">
+                            <div class="card-body">
+                                <p class="card-text"> </p>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+        <!-- <script type="module" src="js/firebase.js"></script> -->
+        <script type="module" src="js/index.js"></script>
+        <script type="module" src="js/processRules.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- DROPDOWN PAGE mini menu scripts: -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+
+    </body>
+</html>

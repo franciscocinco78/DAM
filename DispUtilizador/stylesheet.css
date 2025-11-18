@@ -1,0 +1,288 @@
+/* Global Styling */
+body {
+    padding: 25px;
+    background-color: #f5f5f5;
+    color: #333;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Navbar with Rounded Corners */
+.navbar {
+    background: linear-gradient(to right, #28a745, #20c997);
+    padding: 1rem 2rem;
+    color: #fff;
+    border-radius: 15px !important;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.navbar .navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.navbar .nav-link {
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+    color: #d4edda;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    background-color: #28a745;
+    border: none;
+    border-radius: 10px; /* Rounded corners for dropdown */
+    padding: 0.5rem 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu .dropdown-item {
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #20c997;
+    color: #fff;
+}
+
+/* Cards */
+.card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+    background: linear-gradient(to right, #20c997, #17a2b8);
+    color: white;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 15px 15px 0 0;
+}
+
+
+.map-card {
+    width: 100%;
+    height: 550px;
+    border: 2px solid #28a745;
+    border-radius: 15px;
+    overflow: hidden;
+} 
+
+#map {
+    width: 100%;
+    height: 400px;
+    border-radius: 15px;
+}
+
+/* Temperature Graph
+#temperature-graph {
+    background: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons */
+button {
+    background: linear-gradient(to right, #20c997, #17a2b8);
+    color: white;
+    border: none;
+    border-radius: 25px; /* Rounded buttons */
+    padding: 0.5rem 1rem;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(to right, #17a2b8, #20c997);
+    transform: scale(1.05);
+}
+
+/* Light & Dark Mode Styles */
+.light-mode {
+    background-color: white;
+    color: black;
+    background-image: url('background/lightMode/page3.svg');
+}
+.dark-mode {
+    background-color: black;
+    color: white;
+    background-image: url('background/darkMode/page3.svg');
+}
+
+.light-mode .alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+.dark-mode .alert-success {
+    background-color: #324f34;
+    /* Adjusted for dark background */
+    color: #a8e6a3;
+}
+
+.light-mode .alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+.dark-mode .alert-danger {
+    background-color: #5b2b30;
+    /* Adjusted for dark background */
+    color: #f9a7ab;
+}
+
+.light-mode .alert-warning {
+    background-color: #fff3cd;
+    color: #856404;
+}
+.dark-mode .alert-warning {
+    background-color: #665531;
+    /* Adjusted for dark background */
+    color: #ffdf91;
+}
+
+.light-mode .alert-primary {
+    background-color: #cce5ff;
+    color: #004085;
+}
+.dark-mode .alert-primary {
+    background-color: #2b3a50;
+    /* Adjusted for dark background */
+    color: #8dbfff;
+}
+
+.light-mode .alert-info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+.dark-mode .alert-info {
+    background-color: #2b3f45;
+    /* Adjusted for dark background */
+    color: #8dd6e4;
+}
+
+.light-mode .page3-zone {
+    float: left;
+    width: 100px;
+    height: 35px;
+    margin: 10px;
+    padding: 10px;
+    border: 4px solid black;
+}
+.dark-mode .page3-zone {
+    float: left;
+    width: 100px;
+    height: 35px;
+    margin: 10px;
+    padding: 10px;
+    border: 4px solid rgb(255, 255, 255);
+}
+
+.light-mode .card {
+    background-color: #ffffff;
+    color: #000000;
+    border: 0px solid #dddddd;
+}
+.dark-mode .card {
+    background-color: #333333;
+    color: #ffffff;
+    border: 0px solid #444444;
+}
+
+.light-mode .card-footer {
+    background-color: #ffffff;
+    color: #000000;
+    border-top: 1px solid #dddddd;
+}
+.dark-mode .card-footer {
+    background-color: #616161;
+    color: #ffffff;
+    border-top: 1px solid #ffffff;
+}
+.light-mode .card-footer .text {
+    color: #000000;
+}
+
+.dark-mode .card-footer .text {
+    color: #ffffff;
+}
+
+.light-mode .card-footer .text-muted {
+    color: #6c757d;
+}
+
+.dark-mode .card-footer .text-muted {
+    color: #b5b5b5;
+}
+.light-mode .card-body {
+    background-color: #ffffff;
+    color: #000000;
+    border: 0px solid #dddddd;
+}
+.dark-mode .card-body {
+    background-color: #616161;
+    color: #ffffff;
+    border: 0px solid #444444;
+}
+
+.light-mode .card-header {
+    background-color: #f8f9fa;
+    color: #000000;
+    border-bottom: 0px solid #dddddd;
+}
+
+.dark-mode .card-header {
+    background-color: #444444;
+    color: #ffffff;
+    border-bottom: 0px solid #555555;
+}
+
+
+/* Dark Mode Styles */
+
+
+/* Card with ID "unsaved" */
+[id$="unsaved"] {
+    background-color: #ffe600; /* Lighter yellow background for light mode */
+    border: 20px solid #ffe600; /* Darker yellow border */
+}
+
+.light-mode [id$="unsaved"] {
+    background-color: #ffe600; /* Lighter yellow background for light mode */
+    border: 10px solid #ffe600; /* Darker yellow border */
+}
+
+.dark-mode [id$="unsaved"] {
+    background-color: #ffe600; /* Darker yellow background for dark mode */
+    border: 10px solid #ffe600; /* Lighter yellow border */
+    
+}
+
+
+
+
+
+/* Responsive Enhancements */
+@media (max-width: 768px) {
+    .navbar {
+        border-radius: 0; /* Remove rounded corners on small screens for better layout */
+    }
+}
